@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity — Wellness Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH SCREEN -->
+<div class="auth-screen" id="authScreen">
+  <div class="auth-card">
+    <div class="brand" style="justify-content:center;margin-bottom:20px;">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Serenity</span>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-form="login">Log in</button>
+      <button class="auth-tab" data-form="register">Sign up</button>
+    </div>
+
+    <form id="loginForm" class="auth-form active">
+      <label class="field-label" for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" required>
+      <label class="field-label" for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" required>
+      <p class="auth-error" id="loginError"></p>
+      <button class="btn btn-primary" type="submit">Log in</button>
+    </form>
+
+    <form id="registerForm" class="auth-form">
+      <label class="field-label" for="registerName">Name</label>
+      <input type="text" id="registerName" required>
+      <label class="field-label" for="registerEmail">Email</label>
+      <input type="email" id="registerEmail" required>
+      <label class="field-label" for="registerPassword">Password (min 6 characters)</label>
+      <input type="password" id="registerPassword" required>
+      <p class="auth-error" id="registerError"></p>
+      <button class="btn btn-primary" type="submit">Create account</button>
+    </form>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app" id="appRoot" style="display:none">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Serenity</span>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-tab="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h5v-6h4v6h5v-9"/></svg>
+        <span class="label-text">Dashboard</span>
+      </button>
+      <button class="nav-item" data-tab="mood">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 14.2c1 1.1 2.2 1.7 3.5 1.7s2.5-.6 3.5-1.7"/></svg>
+        <span class="label-text">Mood</span>
+      </button>
+      <button class="nav-item" data-tab="health">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.3a4.3 4.3 0 0 0-7.3-3l-1.5 1.5-1.5-1.5a4.3 4.3 0 1 0-6 6L12 19l7.5-7.7c.8-.8 1.3-1.9 1.3-3Z"/></svg>
+        <span class="label-text">Health</span>
+      </button>
+      <button class="nav-item" data-tab="nutrition">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-3.3 0-5.5 2.8-5.5 6.3 0 3.7 2.6 6.7 4.6 6.7.9 0 1-.4 1.9-.4s1 .4 1.9.4c1.9 0 4.6-3.4 4.6-7 0-3.2-2.2-6-5.5-6Z"/><path d="M12 8c-.3-2.2.7-3.9 2.3-4.7"/></svg>
+        <span class="label-text">Nutrition</span>
+      </button>
+      <button class="nav-item" data-tab="habits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+        <span class="label-text">Habits</span>
+      </button>
+      <button class="nav-item" data-tab="companion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c1.8 1.7 1.8 4.6 0 6.3-1.8-1.7-1.8-4.6 0-6.3Z"/><circle cx="12" cy="15" r="6"/></svg>
+        <span class="label-text">Companion</span>
+      </button>
+      <button class="nav-item" data-tab="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.8"/><path d="M19.4 13.5a7.3 7.3 0 0 0 0-3l1.9-1.4-2-3.3-2.2.9a7.3 7.3 0 0 0-2.6-1.5L14.1 3H9.9l-.4 2.2a7.3 7.3 0 0 0-2.6 1.5l-2.2-.9-2 3.3L4.6 10.5a7.3 7.3 0 0 0 0 3L2.7 14.9l2 3.3 2.2-.9c.8.7 1.6 1.2 2.6 1.5l.4 2.2h4.2l.4-2.2c1-.3 1.8-.8 2.6-1.5l2.2.9 2-3.3-1.9-1.4Z"/></svg>
+        <span class="label-text">Settings</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-pet quick-link" data-tab="companion">
+      <span class="sidebar-pet-face" id="sidebarPetFace">🌱</span>
+      <div class="sidebar-pet-info">
+        <span class="sidebar-pet-name" id="sidebarPetName">Pip</span>
+        <span class="sidebar-pet-points"><span id="sidebarPoints">0</span> pts</span>
+      </div>
+    </div>
+    <button class="logout-btn" id="logoutBtn">Log out</button>
+  </aside>
+
+  <main class="main">
+
+    <!-- DASHBOARD -->
+    <section class="screen active" id="screen-dashboard">
+      <div class="screen-header">
+        <h1 id="dashGreeting">Good morning</h1>
+        <p>Here's how today is shaping up.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card pet-mini-card quick-link" data-tab="companion">
+          <span class="pet-mini-face" id="dashPetFace">🌱</span>
+          <div class="pet-mini-info">
+            <h3>Serene is feeling</h3>
+            <div class="stat-value small" id="dashCareLabel">Content</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Points</h3>
+          <div class="stat-value" id="dashPoints">0</div>
+        </div>
+        <div class="card">
+          <h3>Water</h3>
+          <div class="ring" id="dashWaterRing" style="--pct:0">
+            <div class="ring-inner"><span id="dashWaterCups">0</span>/<span id="dashWaterGoal">8</span></div>
+          </div>
+          <div class="form-row tight" style="justify-content:center">
+            <button class="btn-icon" id="waterMinus">–</button>
+            <button class="btn-icon" id="waterPlus">+</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Mood today</h3>
+          <div class="stat-value" id="dashMood">—</div>
+        </div>
+        <div class="card">
+          <h3>Sleep last night</h3>
+          <div class="stat-value" id="dashSleep">—</div>
+        </div>
+        <div class="card">
+          <h3>Habits done</h3>
+          <div class="stat-value" id="dashHabits">0 / 0</div>
+        </div>
+        <div class="card card-wide">
+          <h3>Quick log</h3>
+          <div class="quick-actions">
+            <button class="btn btn-primary quick-link" data-tab="mood">Log mood</button>
+            <button class="btn btn-ghost quick-link" data-tab="health">Log sleep / workout</button>
+            <button class="btn btn-ghost quick-link" data-tab="nutrition">Log a meal</button>
+            <button class="btn btn-ghost quick-link" data-tab="habits">Check off habits</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOOD -->
+    <section class="screen" id="screen-mood">
+      <div class="screen-header">
+        <h1>Mood</h1>
+        <p>Check in with how you're feeling right now.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card card-wide">
+          <h3>Today's check-in</h3>
+          <div class="mood-faces" id="moodFaces"></div>
+          <label class="field-label" for="moodNote">Note (optional)</label>
+          <textarea id="moodNote" placeholder="What's on your mind?"></textarea>
+          <div class="form-row" style="margin-top:12px">
+            <button class="btn btn-primary" id="saveMoodBtn">Save check-in</button>
+          </div>
+        </div>
+        <div class="card card-wide">
+          <h3>Last 14 days</h3>
+          <div class="bar-row" id="moodHistory"></div>
+        </div>
+        <div class="card card-wide">
+          <h3>Recent entries</h3>
+          <ul class="entry-list" id="moodEntryList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEALTH -->
+    <section class="screen" id="screen-health">
+      <div class="screen-header">
+        <h1>Health</h1>
+        <p>Water, sleep, and movement.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Water today</h3>
+          <div class="ring" id="waterRingHealth" style="--pct:0">
+            <div class="ring-inner"><span id="waterCupsToday">0</span>/<span id="waterGoalToday">8</span></div>
+          </div>
+          <div class="form-row tight" style="justify-content:center">
+            <button class="btn-icon" id="waterMinusHealth">–</button>
+            <button class="btn-icon" id="waterPlusHealth">+</button>
+          </div>
+          <div class="bar-row" id="waterHistory"></div>
+        </div>
+        <div class="card">
+          <h3>Sleep last night</h3>
+          <div class="form-row">
+            <div style="flex:1">
+              <label class="field-label" for="sleepHours">Hours</label>
+              <input type="number" id="sleepHours" min="0" max="14" step="0.5" placeholder="7.5">
+            </div>
+            <div style="flex:1">
+              <label class="field-label" for="sleepQuality">Quality</label>
+              <select id="sleepQuality">
+                <option>Poor</option>
+                <option selected>Okay</option>
+                <option>Great</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="saveSleepBtn">Save sleep</button>
+          <div class="bar-row" id="sleepHistory"></div>
+        </div>
+        <div class="card card-wide">
+          <h3>Log a workout</h3>
+          <div class="form-row">
+            <select id="workoutType">
+              <option>Cardio</option>
+              <option>Strength</option>
+              <option>Yoga</option>
+              <option>Walk</option>
+              <option>Other</option>
+            </select>
+            <input type="number" id="workoutDuration" placeholder="Minutes" min="1">
+            <button class="btn btn-primary" id="addWorkoutBtn">Add</button>
+          </div>
+          <ul class="entry-list" id="workoutList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUTRITION -->
+    <section class="screen" id="screen-nutrition">
+      <div class="screen-header">
+        <h1>Nutrition</h1>
+        <p>Keep a light log of what you're eating.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Today</h3>
+          <div class="stat-value" id="mealsTodayCount">0</div>
+          <span class="tag tag-neutral" id="mealBalanceTag">Log a few more meals</span>
+        </div>
+        <div class="card card-wide">
+          <h3>Log a meal</h3>
+          <div class="form-row">
+            <input type="text" id="mealName" placeholder="What did you eat?">
+            <select id="mealType">
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Snack</option>
+            </select>
+            <button class="btn btn-primary" id="addMealBtn">Add</button>
+          </div>
+          <ul class="entry-list" id="mealList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABITS -->
+    <section class="screen" id="screen-habits">
+      <div class="screen-header">
+        <h1>Habits</h1>
+        <p>Small, repeatable wins — each one feeds Sprout too.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card card-wide">
+          <h3>Today</h3>
+          <ul class="entry-list" id="habitList"></ul>
+          <div class="form-row" style="margin-top:14px">
+            <input type="text" id="newHabitName" placeholder="Add a new habit">
+            <button class="btn btn-primary" id="addHabitBtn">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANION -->
+    <section class="screen" id="screen-companion">
+      <div class="screen-header">
+        <h1>Companion</h1>
+        <p>How you take care of yourself is how Sprout does too.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card card-wide">
+          <div class="pet-stage">
+            <svg id="petSvg" class="mood-happy" viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+              <ellipse class="pet-shadow" cx="100" cy="178" rx="55" ry="9"/>
+              <path class="pet-leaf" d="M90 55 C70 40 70 15 85 5 C95 25 95 45 90 55Z"/>
+              <path class="pet-leaf" d="M110 55 C130 40 130 15 115 5 C105 25 105 45 110 55Z"/>
+              <ellipse class="pet-body" cx="100" cy="122" rx="58" ry="52"/>
+              <circle class="pet-cheek" cx="72" cy="130" r="9"/>
+              <circle class="pet-cheek" cx="128" cy="130" r="9"/>
+              <circle class="pet-eye" cx="84" cy="114" r="6"/>
+              <circle class="pet-eye" cx="116" cy="114" r="6"/>
+              <path id="petMouth" class="pet-mouth" d="M78 128 Q100 148 122 128"/>
+            </svg>
+            <div class="pet-accessory-badge" id="petAccessoryBadge"></div>
+          </div>
+          <div class="companion-headline">
+            <h2 id="companionName">Pip</h2>
+            <p><span id="companionStatus">Content</span> · score <span id="companionScore" class="mono">0</span>/100 · <span id="companionPoints" class="mono">0</span> pts</p>
+          </div>
+          <div class="factor-grid">
+            <div class="factor">
+              <div class="factor-label">Water</div>
+              <div class="factor-value" id="factorWater">0 / 8 cups</div>
+            </div>
+            <div class="factor">
+              <div class="factor-label">Mood</div>
+              <div class="factor-value" id="factorMood">Not logged yet</div>
+            </div>
+            <div class="factor">
+              <div class="factor-label">Sleep</div>
+              <div class="factor-value" id="factorSleep">Not logged yet</div>
+            </div>
+            <div class="factor">
+              <div class="factor-label">Habits</div>
+              <div class="factor-value" id="factorHabits">0 / 0</div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-wide">
+          <h3>Accessories</h3>
+          <div class="accessory-grid" id="accessoryGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="screen" id="screen-settings">
+      <div class="screen-header">
+        <h1>Settings</h1>
+        <p>Tune the app to fit you.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card card-wide">
+          <div class="settings-row">
+            <div>
+              <label class="field-label" for="petNameInput">Companion name</label>
+              <input type="text" id="petNameInput">
+            </div>
+            <button class="btn btn-ghost" id="savePetNameBtn">Save</button>
+          </div>
+          <div class="settings-row">
+            <div>
+              <label class="field-label" for="waterGoalInput">Daily water goal (cups)</label>
+              <input type="number" id="waterGoalInput" min="1" max="20">
+            </div>
+            <button class="btn btn-ghost" id="saveWaterGoalBtn">Save</button>
+          </div>
+          <div class="settings-row">
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle">
+              <span>Dark mode</span>
+            </label>
+          </div>
+          <div class="settings-row">
+            <div>
+              <div style="font-weight:600">Reset all data</div>
+              <div class="field-label" style="margin-top:2px">Clears every log, habit, and unlocked accessory.</div>
+            </div>
+            <button class="btn btn-ghost" id="resetDataBtn" style="color:var(--accent-rose)">Reset</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app-prototype.js"></script>
+</body>
+</html>
