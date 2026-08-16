@@ -1,4 +1,4 @@
-# Sprout - Full-Stack Setup (PHP + MySQL)
+# 🌱Sprout - Full-Stack Setup (PHP + MySQL)
 
 Everything in this folder is one webroot: the frontend (`index.html`, `style.css`,
 `app.js`) and the backend (`auth/`, `api/`, `config.php`) are served together, so
