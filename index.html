@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hally.dev | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav-row">
+      <div class="logo-panel panel">
+        <div class="logo-row">
+          <div class="logo">HALLY<span>.DEV</span></div>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="#home" class="active">home</a>
+          <a href="#projects">projects</a>
+          <a href="#skills">skills</a>
+          <a href="#certifications">certifications</a>
+          <a href="#cv">cv</a>
+        </div>
+      </div>
+      <div class="badge-col">
+        <a href="https://github.com/Hally149" target="_blank" rel="noopener noreferrer" class="mini-badge gh"><b>HallyCodes</b>my GitHub</a>
+        <a href="#" class="mini-badge st"><b>Hally E.</b>my business</a>
+      </div>
+      <a href="#contact" class="contact-panel panel">contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" id="home">
+  <div class="hero-grid">
+    <div class="hero-card panel reveal">
+      <div class="avatar">
+        <img src="assets/avatar2.png" alt="Hally's avatar">
+      </div>
+      <div>
+        <h1>Hi, I'm <em>Hally</em>!</h1>
+        <p>Final-year Cybersecurity undergraduate at the University of Lancashire with a strong focus on cybersecurity, full-stack web development, graphic design and user-centred design. I combine analytical problem-solving with clean code to build applications that solve everyday user challenges. This portfolio highlights my recent academic and independent projects, demonstrating my growth in scalable architecture and modern JavaScript frameworks.</p>
+        <div class="hero-links">
+          <a href="#skills">about me</a>
+          <a href="#projects">my projects</a>
+          <a href="#certifications">my certifications</a>
+        </div>
+      </div>
+    </div>
+    <div class="side-stack reveal">
+      <div class="status-card panel">
+        <div class="status-dot" id="status-icon">&#x2727;</div>
+        <div>
+          <div class="name">HallyCodes<span>@hallycodes</span></div>
+          <div class="sub" id="status-sub">currently online</div>
+        </div>
+      </div>
+      <div class="testimonial-card panel">
+        <div class="t-head">
+          <div>
+            <div class="tag">TESTIMONIAL</div>
+            <div class="sub">reviews from products I've delivered and people I've worked with!</div>
+          </div>
+          <div class="t-nav">
+            <span class="t-count" id="t-count">01/03</span>
+            <button class="t-btn" id="t-prev">‹</button>
+            <button class="t-btn" id="t-next">›</button>
+          </div>
+        </div>
+        <div class="quote-box">
+          <div class="stars">★★★★★</div>
+          <div id="t-text">"Enter Text"</div>
+        </div>
+      </div>
+      <div class="reference-card panel">
+        <div class="t-head">
+          <div>
+            <div class="tag">REFERENCE</div>
+            <div class="sub">from a client I worked with</div>
+          </div>
+          <div class="t-nav">
+            <span class="t-count" id="r-count">01/03</span>
+            <button class="t-btn" id="r-prev">‹</button>
+            <button class="t-btn" id="r-next">›</button>
+          </div>
+        </div>
+        <div class="quote-box">
+          <div class="stars">★★★★★</div>
+          <div id="r-text">"Enter Text"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quick-intro panel reveal">
+    <h3>INTRO</h3>
+    <p>I'm Hally, and I like building useful things. Lately that meant security tooling — a vulnerability scanner, a SOC-style monitoring dashboard, and a zero-knowledge credential vault — alongside the occasional web application.</p>
+    <p>Currently juggling <span class="num-highlight">0</span> active client projects <span class="live-pill not-building" id="status-toggle">not building</span>. If you want to talk about a project or just say hi, feel free to <a href="#contact" style="color:var(--purple); text-decoration:underline;">reach out</a>.</p>
+  </div>
+</div>
+
+<div class="wrap section" id="projects">
+  <div class="section-head reveal">
+    <span class="section-tag">ls ./projects</span>
+    <h2>Recent work</h2>
+  </div>
+
+  <div class="project-card panel reveal">
+    <div class="project-media">
+      <video controls playsinline poster="assets/portsentry-thumbnail.svg">
+        <source src="assets/portsentry-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-copy">
+      <div class="kicker">01 — security · tool</div>
+      <h3>PortSentry</h3>
+      <p>A lightweight intrusion-detection tool that watches for port-scanning activity on a network and flags it as it happens — catching the kind of reconnaissance sweep that often shows up right before a more serious attack, so it doesn't go unnoticed.</p>
+      <div class="tag-row">
+        <span class="tag">Python</span><span class="tag">Nmap</span><span class="tag">Intrusion Detection</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Hally149/portsentry" target="_blank" rel="noopener noreferrer">Try it out →</a>
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card panel reveal">
+    <div class="project-media">
+      <video controls playsinline poster="assets/threatlens-thumbnail.png">
+        <source src="assets/threatlens-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-copy">
+      <div class="kicker">02 — security · dashboard</div>
+      <h3>ThreatLens</h3>
+      <p>A security dashboard for keeping an eye on what's happening across a network at a glance — pulling scattered activity into one view so unusual behaviour is easier to spot and act on quickly.</p>
+      <div class="tag-row">
+        <span class="tag">TypeScript</span><span class="tag">WebSockets</span><span class="tag">SIEM</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Hally149" target="_blank" rel="noopener noreferrer">Try it out →</a>
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card panel reveal">
+    <div class="project-media vault-media">
+      <video controls playsinline poster="assets/SkyVault Security -Login page.png">
+        <source src="assets/skyvault-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-copy">
+      <div class="kicker">03 — security · prototype</div>
+      <h3>SkyVault Security</h3>
+      <p>A secure cloud storage prototype built around a real Node.js/Express backend: files are encrypted with AES-256-GCM, account passwords are hashed with PBKDF2, and access runs through session-based authentication — built for a university security module alongside a refined, production-feeling UI.</p>
+      <div class="tag-row">
+        <span class="tag">Node.js</span><span class="tag">AES-256-GCM</span><span class="tag">PBKDF2</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Hally149" target="_blank" rel="noopener noreferrer">Try it out →</a>
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card panel reveal">
+    <div class="project-media">
+      <video controls playsinline poster="assets/aura-smart-mirror.png">
+        <source src="assets/aura-smart-mirror-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="project-copy">
+      <div class="kicker">04 — smart mirror · group project</div>
+      <h3>Aura Smart Mirror</h3>
+      <p>A mood-aware smart mirror: a Flask backend reads emotion from a live camera feed and suggests music to match it, while a built-in detector flags misleading or exaggerated claims in text. Mood-reactive LEDs (driven by a Raspberry Pi) turn that same emotional read into ambient light, and a companion React Native + Firebase app carries it to mobile with mood tracking, guided me-time, and sleep tools.</p>
+      <div class="tag-row">
+        <span class="tag">Python</span><span class="tag">OpenAI API</span><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span><span class="tag">Hugging Face</span><span class="tag">SQLite</span><span class="tag">OpenCV</span><span class="tag">Web Speech API + Python Text-to-Speech/NLP</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Hally149" target="_blank" rel="noopener noreferrer">Try it out →</a>
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="view-archive reveal">
+    <a href="old projects.html">View older projects →</a>
+  </div>
+</div>
+
+<div class="wrap section" id="skills">
+  <div class="section-head reveal">
+    <span class="section-tag">cat ./skills.txt</span>
+    <h2>Tools I reach for</h2>
+  </div>
+  <div class="skill-grid reveal">
+    <div class="skill-chip panel"><div class="k">Chocolatey</div><div class="v">package management</div></div>
+    <div class="skill-chip panel"><div class="k">Encryption</div><div class="v">AES</div></div>
+    <div class="skill-chip panel"><div class="k">Figma</div><div class="v">prototyping | design</div></div>
+    <div class="skill-chip panel"><div class="k">Nmap</div><div class="v">recon</div></div>
+    <div class="skill-chip panel"><div class="k">Hugging Face</div><div class="v">machine learning</div></div>
+    <div class="skill-chip panel"><div class="k">Autopsy</div><div class="v">digital forensics</div></div>
+    <div class="skill-chip panel"><div class="k">Metasploit</div><div class="v">penetration testing</div></div>
+    <div class="skill-chip panel"><div class="k">Kali Linux</div><div class="v">penetration testing</div></div>
+    <div class="skill-chip panel"><div class="k">Wireshark</div><div class="v">network analysis</div></div>
+    <div class="skill-chip panel"><div class="k">EnCase</div><div class="v">digital forensics</div></div>
+    <div class="skill-chip panel"><div class="k">CrypTool</div><div class="v">cryptography</div></div>
+    <div class="skill-chip panel"><div class="k">Adobe Illustrator</div><div class="v">graphic design</div></div>
+    <div class="skill-chip panel"><div class="k">Adobe Photoshop</div><div class="v">photography</div></div>
+  </div>
+</div>
+
+<div class="wrap section" id="programming-languages">
+  <div class="section-head reveal">
+    <span class="section-tag">cat ./programming-languages.txt</span>
+    <h2>Programming Languages </h2>
+  </div>
+  <div class="skill-grid reveal">
+    <div class="skill-chip panel"><div class="k">HTML/CSS/JavaScript</div><div class="v">frontend</div></div>
+    <div class="skill-chip panel"><div class="k">HTML5</div><div class="v">frontend</div></div>
+    <div class="skill-chip panel"><div class="k">C++</div><div class="v">systems programming</div></div>
+    <div class="skill-chip panel"><div class="k">Node.js</div><div class="v">backend</div></div>
+    <div class="skill-chip panel"><div class="k">mySQL</div><div class="v">data layer | backend</div></div>
+    <div class="skill-chip panel"><div class="k">Python</div><div class="v">data science</div></div>
+    <div class="skill-chip panel"><div class="k">PHP</div><div class="v">backend</div></div>
+  </div>
+</div>
+
+<div class="wrap section" id="certifications">
+  <div class="section-head reveal cert-section-head">
+    <div>
+      <span class="section-tag">ls ./certifications</span>
+      <h2>Certifications</h2>
+    </div>
+    <div class="t-nav">
+      <span class="t-count" id="cert-count">01/03</span>
+      <button class="t-btn" id="cert-prev">‹</button>
+      <button class="t-btn" id="cert-next">›</button>
+    </div>
+  </div>
+  <div class="cert-grid reveal" id="cert-grid"></div>
+</div>
+
+<div class="wrap section" id="cv">
+  <div class="section-head reveal">
+    <span class="section-tag">cat ./cv.pdf</span>
+    <h2>CV</h2>
+  </div>
+  <div class="cv-card panel reveal">
+    <div class="cv-copy">
+      <h3>Want the full picture?</h3>
+      <p>Download my CV for a complete breakdown of my experience, education, and skills.</p>
+      <a href="assets\Hally E. cv and cover letter.pdf" class="cv-download" download>Download CV <span class="cta-arrow">↓</span></a>
+    </div>
+    <div class="cv-highlights">
+      <div class="cv-highlight">
+        <div class="cv-h-label">Education</div>
+        <div class="cv-h-value">BSc (Hons) Cybersecurity / University of Lancashire</div>
+      </div>
+      <div class="cv-highlight">
+        <div class="cv-h-label">Experience</div>
+        <div class="cv-h-value">[Add years / most recent role]</div>
+      </div>
+      <div class="cv-highlight">
+        <div class="cv-h-label">Focus</div>
+        <div class="cv-h-value">Cybersecurity &amp; full-stack development</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="contact">
+  <div class="contact-block panel reveal">
+    <h2>Let's build something</h2>
+    <p>Open to freelance work, collabs, or just a chat about a project you're stuck on.</p>
+    <div class="contact-row">
+      <a href="mailto:hally@hally.dev" class="primary">Email me</a>
+      <a href="https://github.com/Hally149" target="_blank" rel="noopener noreferrer" class="mini-badge gh">GitHub</a>
+      <a href="https://www.linkedin.com/in/hally-ero-99329641a/" target="_blank" rel="noopener noreferrer" class="mini-badge li">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 hallycodes.dev. All rights reserved</footer>
+
+<script>
+  const testimonials = [
+    {text:'"Enter Text"'},
+    {text:'"Enter Text"'},
+    {text:'"Enter Text"'}
+  ];
+  let tIndex = 0;
+  const tText = document.getElementById('t-text');
+  const tCount = document.getElementById('t-count');
+  function renderTestimonial(){
+    tText.textContent = testimonials[tIndex].text;
+    tCount.textContent = String(tIndex+1).padStart(2,'0') + '/' + String(testimonials.length).padStart(2,'0');
+  }
+  document.getElementById('t-prev').addEventListener('click', () => {
+    tIndex = (tIndex - 1 + testimonials.length) % testimonials.length;
+    renderTestimonial();
+  });
+  document.getElementById('t-next').addEventListener('click', () => {
+    tIndex = (tIndex + 1) % testimonials.length;
+    renderTestimonial();
+  });
+
+  const references = [
+    {text:'Sabrina Yu: "Hally took part in several Bright Network virtual events, where she took on the role of Student Leadership board. These events saw over 300 students that attended to gain insight into different careers and speak to professionals. Hally took part in icebreaker activities where she led the virtual side. She was proactive and worked well with the team, and I’m sure she will continue to perform consistently in the future."'},
+    {text:'"Enter Text"'},
+    {text:'"Enter Text"'}
+  ];
+  let rIndex = 0;
+  const rText = document.getElementById('r-text');
+  const rCount = document.getElementById('r-count');
+  function renderReference(){
+    rText.textContent = references[rIndex].text;
+    rCount.textContent = String(rIndex+1).padStart(2,'0') + '/' + String(references.length).padStart(2,'0');
+  }
+  document.getElementById('r-prev').addEventListener('click', () => {
+    rIndex = (rIndex - 1 + references.length) % references.length;
+    renderReference();
+  });
+  document.getElementById('r-next').addEventListener('click', () => {
+    rIndex = (rIndex + 1) % references.length;
+    renderReference();
+  });
+
+  // Owner-only "online/offline" status toggle.
+  // Visiting once with ?owner=hally in the URL flips this browser into
+  // owner mode (saved in localStorage) — regular visitors never see or
+  // trigger this, since they never load the page with that flag.
+  const OWNER_KEY = 'hally_owner_mode';
+  const STATUS_KEY = 'hally_online_status';
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('owner') === 'hally') {
+    localStorage.setItem(OWNER_KEY, 'true');
+  }
+  const isOwner = localStorage.getItem(OWNER_KEY) === 'true';
+
+  const statusSub = document.getElementById('status-sub');
+  const statusIcon = document.getElementById('status-icon');
+  function applyStatus(online){
+    statusSub.textContent = online ? 'currently online' : 'currently offline';
+    statusSub.classList.toggle('is-online', online);
+  }
+  let isOnline = localStorage.getItem(STATUS_KEY) === 'online';
+  applyStatus(isOnline);
+
+  if (isOwner) {
+    statusSub.classList.add('editable');
+    statusIcon.classList.add('editable');
+    const toggleStatus = () => {
+      isOnline = !isOnline;
+      localStorage.setItem(STATUS_KEY, isOnline ? 'online' : 'offline');
+      applyStatus(isOnline);
+    };
+    statusSub.addEventListener('click', toggleStatus);
+    statusIcon.addEventListener('click', toggleStatus);
+  }
+
+  const statusToggle = document.getElementById('status-toggle');
+  statusToggle.addEventListener('click', () => {
+    const isBuilding = !statusToggle.classList.contains('not-building');
+    statusToggle.classList.toggle('not-building');
+    statusToggle.textContent = isBuilding ? 'not building' : 'building';
+  });
+
+  const certificates = [
+    {image:'assets/aig-shields-up-cert.png', name:'AIG Shields Up: Cybersecurity Job Simulation', issuer:'Forage', year:'2026'},
+    {image:'assets/pwc-cyber-security-consulting-cert.png', name:'Pwc Cyber Security Consulting Simulation', issuer:'Forage', year:'2025'},
+    {image:'assets/mastercard-cybersecurity-cert.png', name:'Mastercard Cybersecurity Job Simulation', issuer:'Forage', year:'2025'},
+    {image:'assets/bird-and-bird-cert.png', name:'Bird & Bird Commercial Law Bird Bird Virtual Experience Programme', issuer:'Forage', year:'2025'},
+    {image:'assets/deloitte-cyber-cert.png', name:'Deloitte. Cyber Job Simulation', issuer:'Forage', year:'2025'},
+    {image:'assets/mooc-sprint-cert.png', name:'MOOC SPRINT INTRO TO CODING', issuer:'Forage', year:'2025'},
+    {image:'assets/columbia-plus-cert.png', name:'Prompt Engineering & Programming with OpenAI', issuer:'Columbia + (Columbia University)', year:'2025'},
+    {image:'assets/intro-to-cyber-cert.png', name:'Introduction to Cybersecurity', issuer:'Cisco Networking Academy', year:'2024'},
+    {image:'assets/Graduate Careers For Bright Minds _ Bright Network_files', name:'Bright Network Women In Leadership 2025', issuer:'James Uffindell', year:'2025'},
+    {image:'assets/', name:'Bright Network Women in TEC September 2025', issuer:'James Uffindell', year:'2025'},
+    {image:'assets/', name:'Bright Network Black Talent in Banking Autmn 2025', issuer:'James Uffindell', year:'2025'},
+    {image:'assets/', name:'IEUK 2025: Technology & Engineering', issuer:'James Uffindell', year:'2025'},
+    {image:'assets/', name:'Couch to Coder 2025', issuer:'James Uffindell', year:'2025'},
+    {image:'assets/', name:'IEUK 2026: Finance, Professional Services & Consulting', issuer:'James Uffindell', year:'2026'}
+  ];
+  const CERTS_PER_PAGE = 3;
+  const certPageCount = Math.ceil(certificates.length / CERTS_PER_PAGE);
+  let certPage = 0;
+  const certGrid = document.getElementById('cert-grid');
+  const certCount = document.getElementById('cert-count');
+  function renderCertificates(){
+    const start = certPage * CERTS_PER_PAGE;
+    const pageItems = certificates.slice(start, start + CERTS_PER_PAGE);
+    certGrid.innerHTML = pageItems.map(c => `
+      <div class="cert-card panel">
+        <div class="cert-body">
+          <div class="cert-name">${c.name}</div>
+          <div class="cert-issuer">${c.issuer}</div>
+          <div class="cert-year">${c.year}</div>
+        </div>
+        <div class="cert-media"><img src="${c.image}" alt="${c.name} certificate"></div>
+      </div>
+    `).join('');
+    certCount.textContent = String(certPage+1).padStart(2,'0') + '/' + String(certPageCount).padStart(2,'0');
+  }
+  function certGoPrev(){
+    certPage = (certPage - 1 + certPageCount) % certPageCount;
+    renderCertificates();
+  }
+  function certGoNext(){
+    certPage = (certPage + 1) % certPageCount;
+    renderCertificates();
+  }
+  document.getElementById('cert-prev').addEventListener('click', certGoPrev);
+  document.getElementById('cert-next').addEventListener('click', certGoNext);
+  renderCertificates();
+
+  let certPointerActive = false;
+  let certStartX = 0;
+  let certStartY = 0;
+  const CERT_SWIPE_THRESHOLD = 40;
+  certGrid.addEventListener('pointerdown', (e) => {
+    certPointerActive = true;
+    certStartX = e.clientX;
+    certStartY = e.clientY;
+  });
+  certGrid.addEventListener('pointerup', (e) => {
+    if (!certPointerActive) return;
+    certPointerActive = false;
+    const dx = e.clientX - certStartX;
+    const dy = e.clientY - certStartY;
+    if (Math.abs(dx) < CERT_SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
+    if (dx < 0) certGoNext();
+    else certGoPrev();
+  });
+  certGrid.addEventListener('pointercancel', () => { certPointerActive = false; });
+
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.1});
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

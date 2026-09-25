@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Old Projects | Hally.dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav-row">
+      <div class="logo-panel panel">
+        <div class="logo-row">
+          <div class="logo">HALLY<span>.DEV</span></div>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#home">home</a>
+          <a href="index.html#projects">projects</a>
+          <a href="index.html#skills">skills</a>
+          <a href="index.html#certifications">certifications</a>
+          <a href="index.html#cv">cv</a>
+        </div>
+      </div>
+      <div class="badge-col">
+        <a href="https://github.com/Hally149" target="_blank" rel="noopener noreferrer" class="mini-badge gh"><b>HallyCodes</b>my GitHub</a>
+        <a href="#" class="mini-badge st"><b>Hally E.</b>my business</a>
+      </div>
+      <a href="index.html#contact" class="contact-panel panel">contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap section" id="old-projects" style="padding-top:36px;">
+  <div class="section-head reveal">
+    <span class="section-tag">ls ./old-projects</span>
+    <h2>Older work</h2>
+  </div>
+  <p style="color:var(--text-soft); font-size:14.5px; max-width:640px; margin:-20px 0 30px;">
+    A few earlier projects kept here rather than on the main page — smaller in scope, or since replaced by newer work.
+    <a href="index.html#projects" style="color:var(--purple); text-decoration:underline;">Back to current projects →</a>
+  </p>
+
+  <div class="project-card panel reveal">
+    <div class="project-media">
+      <img src="assets/old-project-1.png" alt="[Add old project name] screenshot">
+    </div>
+    <div class="project-copy">
+      <div class="kicker">archive — [add category]</div>
+      <h3>[Add old project name]</h3>
+      <p>[Add details here] — a short description of what this project did and why it was built.</p>
+      <div class="tag-row">
+        <span class="tag">[Add tag]</span><span class="tag">[Add tag]</span>
+      </div>
+      <div class="project-links">
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card panel reveal">
+    <div class="project-media">
+      <img src="assets/old-project-2.png" alt="[Add old project name] screenshot">
+    </div>
+    <div class="project-copy">
+      <div class="kicker">archive — [add category]</div>
+      <h3>[Add old project name]</h3>
+      <p>[Add details here] — a short description of what this project did and why it was built.</p>
+      <div class="tag-row">
+        <span class="tag">[Add tag]</span><span class="tag">[Add tag]</span>
+      </div>
+      <div class="project-links">
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card panel reveal">
+    <div class="project-media">
+      <img src="assets/old-project-3.png" alt="[Add old project name] screenshot">
+    </div>
+    <div class="project-copy">
+      <div class="kicker">archive — [add category]</div>
+      <h3>[Add old project name]</h3>
+      <p>[Add details here] — a short description of what this project did and why it was built.</p>
+      <div class="tag-row">
+        <span class="tag">[Add tag]</span><span class="tag">[Add tag]</span>
+      </div>
+      <div class="project-links">
+        <a href="#">Case study →</a><a href="#">Source →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 hallycodes.dev — built with HTML, CSS &amp; too many energy drinks ⚡</footer>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.1});
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
